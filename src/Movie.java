@@ -1,16 +1,20 @@
 public class Movie {
-    String movieTitle;
-    int launchDate;
-    boolean includedInPlan;
-    double movieGrade;
-    double movieGradeSum;
-    int totalGradeCount;
-    double averageMovieGrade;
-    int totalReviewCount;
-    double averageReview;
-    int movieDuration;
-    String movieGenre;
-    String movieDirector;
+    private String movieTitle;
+    private int launchDate;
+    private boolean includedInPlan;
+    private double movieGrade;
+    private double movieGradeSum;
+    private int totalGradeCount;
+    private double averageMovieGrade;
+    private int totalReviewCount;
+    private double averageReview;
+    private int movieDuration;
+    private String movieGenre;
+    private String movieDirector;
+
+    int getTotalGradeCount() {
+        return totalGradeCount;
+    }
 
     void showMovieDetails() {
         System.out.println("Movie Title: " + movieTitle);
