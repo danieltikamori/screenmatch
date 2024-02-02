@@ -11,7 +11,7 @@ public class Conditional {
 
 
         if (launchYear > currentYear) {
-            System.out.println("Movie release that customers are liking!");
+            System.out.println("cc.tkmr.screenmatch.models.Movie release that customers are liking!");
         } else {
             System.out.println("Retro movie that worth watching!");
         }

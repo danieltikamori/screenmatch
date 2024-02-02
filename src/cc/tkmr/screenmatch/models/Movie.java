@@ -1,3 +1,5 @@
+package cc.tkmr.screenmatch.models;
+
 public class Movie {
     private String movieTitle;
     private int launchDate;
@@ -12,30 +14,30 @@ public class Movie {
     private String movieGenre;
     private String movieDirector;
 
-    int getTotalGradeCount() {
+    public int getTotalGradeCount() {
         return totalGradeCount;
     }
 
-    void showMovieDetails() {
-        System.out.println("Movie Title: " + movieTitle);
+    public void showMovieDetails() {
+        System.out.println("cc.tkmr.screenmatch.models.Movie Title: " + movieTitle);
         System.out.println("Launch Date: " + launchDate);
         System.out.println("Included in plan: " + includedInPlan);
-        System.out.println("Movie Grade: " + movieGrade);
+        System.out.println("cc.tkmr.screenmatch.models.Movie Grade: " + movieGrade);
         System.out.println("Total Review Count: " + totalGradeCount);
-        System.out.println("Average Movie Grade: " + averageMovieGrade);
+        System.out.println("Average cc.tkmr.screenmatch.models.Movie Grade: " + averageMovieGrade);
         System.out.println("Total Rating Count: " + totalReviewCount);
         System.out.println("Average Rating: " + averageReview);
-        System.out.println("Movie Duration: " + movieDuration);
-        System.out.println("Movie Genre: " + movieGenre);
-        System.out.println("Movie Director: " + movieDirector);
+        System.out.println("cc.tkmr.screenmatch.models.Movie Duration: " + movieDuration);
+        System.out.println("cc.tkmr.screenmatch.models.Movie Genre: " + movieGenre);
+        System.out.println("cc.tkmr.screenmatch.models.Movie Director: " + movieDirector);
     }
 
-    void calculateMovieGrade(double grade) {
+    public void calculateMovieGrade(double grade) {
         movieGradeSum += grade;
         totalGradeCount++;
     }
 
-    double calculateAverageMovieGrade() {
+    public double calculateAverageMovieGrade() {
         return movieGradeSum / totalGradeCount;
     }
 }
