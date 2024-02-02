@@ -5,10 +5,10 @@ import cc.tkmr.screenmatch.models.Movie;
 public class Main {
     public static void main(String[] args) {
         Movie myMovie = new Movie();
-//        myMovie.movieTitle = "Star Wars";
-//        myMovie.launchDate = 1977;
-//        myMovie.includedInPlan = true;
-//        myMovie.movieDuration = 200;
+        myMovie.setMovieTitle("Star Wars");
+        myMovie.setLaunchDate(1977);
+        myMovie.setIncludedInPlan(true);
+        myMovie.setMovieDurationInMinutes(200);
 //        myMovie.movieGenre = "Sci-Fi";
 
         myMovie.showMovieDetails();
