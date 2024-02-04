@@ -14,6 +14,11 @@ public class Title {
     private String titleGenre;
     private String titleDirector;
 
+    public Title(String titleName, int launchDate) {
+        this.titleName = titleName;
+        this.launchDate = launchDate;
+    }
+
     public String getTitleName() {
         return titleName;
     }
@@ -68,4 +73,5 @@ public class Title {
         averageTitleGrade = titleGradeSum / totalGradeCount;
         return averageTitleGrade;
     }
+
 }

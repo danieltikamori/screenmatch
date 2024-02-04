@@ -10,22 +10,16 @@ import java.util.ArrayList;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Movie myMovie = new Movie();
-        myMovie.setTitleName("Star Wars");
-        myMovie.setLaunchDate(1977);
+        Movie myMovie = new Movie("Star Wars", 1977);
         myMovie.setIncludedInPlan(true);
         myMovie.setTitleDurationInMinutes(200);
 //        myMovie.movieGenre = "Sci-Fi";
 
-        Movie myMovie2 = new Movie();
-        myMovie2.setTitleName("Lord of the Rings");
-        myMovie2.setLaunchDate(2001);
+        Movie myMovie2 = new Movie("Lord of the Rings", 2000);
         myMovie2.setIncludedInPlan(false);
         myMovie2.setTitleDurationInMinutes(300);
 
-        Series mySeries = new Series();
-        mySeries.setTitleName("Game of Thrones");
-        mySeries.setLaunchDate(2011);
+        Series mySeries = new Series("Game of Thrones", 2011);
         mySeries.setNumberOfSeasonsInSeries(8);
         mySeries.setNumberOfEpisodesInSeason(8);
         mySeries.setMinutesPerEpisode(30);
@@ -57,9 +51,7 @@ public class Main {
         myEpisode.setTotalVisualizations(300);
         recommendationFilter.filter(myEpisode);
 
-        var danielsMovie = new Movie(); // Use var instead of Movie
-        danielsMovie.setTitleName("The Matrix");
-        danielsMovie.setLaunchDate(1999);
+        var danielsMovie = new Movie("The Matrix", 1999); // Use var instead of Movie
         danielsMovie.setIncludedInPlan(true);
         danielsMovie.setTitleDurationInMinutes(200);
         danielsMovie.evaluateTitle(9.5);
