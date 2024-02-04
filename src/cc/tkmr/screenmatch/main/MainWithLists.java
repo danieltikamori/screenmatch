@@ -5,6 +5,8 @@ import cc.tkmr.screenmatch.models.Series;
 import cc.tkmr.screenmatch.models.Title;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MainWithLists {
     public static void main(String[] args) {
@@ -33,8 +35,28 @@ public class MainWithLists {
                 System.out.println("Rating: " + movie.calculateAverageTitleRating());
             }
         }
-//            Movie movie = (Movie) title;
-//            System.out.println("Rating: " + movie.getAverageReview());
+        ArrayList<String> artistSearch = new ArrayList<>();
+        artistSearch.add("Michael");
+        artistSearch.add("Dave");
+        artistSearch.add("Matt");
+        artistSearch.add("Anthony");
+        System.out.println(artistSearch);
+
+        // Using Collections.sort
+        System.out.println("As it is artist list:");
+        Collections.sort(artistSearch);
+        System.out.println("Ordered artist list:");
+        System.out.println(artistSearch);
+
+        // Using Collections.sort with compareTo as titles have many properties
+        Collections.sort(titleArrayList);
+        System.out.println("After sorting the Title list:");
+        System.out.println(titleArrayList);
+
+        // Using sort with Comparator, comparing and lambda expression as titles must be comparable with numbers
+        System.out.println("Ordering by launch date:");
+        titleArrayList.sort(Comparator.comparing(Title::getLaunchDate));
+        System.out.println(titleArrayList);
     }
 
 }

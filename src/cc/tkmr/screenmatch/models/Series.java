@@ -52,4 +52,9 @@ public class Series extends Title {
     public int getTitleDurationInMinutes() {
         return numberOfSeasonsInSeries * numberOfEpisodesInSeason * minutesPerEpisode;
     }
+
+    @Override
+    public String toString() {
+        return "Series: " + this.getTitleName() + " (" + this.getLaunchDate() + ")";
+    }
 }

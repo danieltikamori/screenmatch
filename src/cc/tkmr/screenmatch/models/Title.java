@@ -1,6 +1,6 @@
 package cc.tkmr.screenmatch.models;
 
-public class Title {
+public class Title implements Comparable<Title> {
     private String titleName;
     private int launchDate;
     private boolean includedInPlan;
@@ -73,4 +73,16 @@ public class Title {
         return titleRatingSum / totalGradeCount;
     }
 
+    /**
+     * Compares this Title object with the specified Title object for order.
+     *
+     * @param  otherTitle  the Title to be compared
+     * @return       a negative integer, zero, or a positive integer as this
+     *               object is less than, equal to, or greater than the
+     *               specified object.
+     */
+    @Override
+    public int compareTo(Title otherTitle) {
+        return this.getTitleName().compareTo(otherTitle.getTitleName());
+    }
 }
