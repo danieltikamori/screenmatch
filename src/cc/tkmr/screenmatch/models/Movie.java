@@ -1,6 +1,12 @@
 package cc.tkmr.screenmatch.models;
 
-public class Movie extends Title {
+import cc.tkmr.screenmatch.calculations.Classifiable;
 
+public class Movie extends Title implements Classifiable {
+
+    @Override
+    public int getClassification() {
+        return (int) getAverageTitleGrade() / 2;
+    }
 }
 

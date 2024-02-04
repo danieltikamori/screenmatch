@@ -1,4 +1,4 @@
-package Calculations;
+package cc.tkmr.screenmatch.calculations;
 
 import cc.tkmr.screenmatch.models.Title;
 

@@ -1,7 +1,8 @@
-import Calculations.DurationCalculator;
+import cc.tkmr.screenmatch.calculations.DurationCalculator;
+import cc.tkmr.screenmatch.calculations.RecommendationFilter;
+import cc.tkmr.screenmatch.models.Episode;
 import cc.tkmr.screenmatch.models.Movie;
 import cc.tkmr.screenmatch.models.Series;
-import cc.tkmr.screenmatch.models.Title;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -30,9 +31,9 @@ public class Main {
 
 
         myMovie.showTitleDetails();
-        myMovie.calculateTitleGrade(9.5);
-        myMovie.calculateTitleGrade(8.5);
-        myMovie.calculateTitleGrade(7.5);
+        myMovie.evaluateTitle(9.5);
+        myMovie.evaluateTitle(8.5);
+        myMovie.evaluateTitle(7.5);
 //        System.out.println(myMovie.movieGradeSum);
 //        System.out.println(myMovie.totalGradeCount);
         System.out.println(myMovie.calculateAverageTitleGrade());
@@ -43,5 +44,26 @@ public class Main {
         durationCalculator.includeTitle(myMovie2);
         durationCalculator.includeTitle(mySeries);
         System.out.println(durationCalculator.getTotalDurationInMinutes());
+
+        RecommendationFilter recommendationFilter = new RecommendationFilter();
+        recommendationFilter.filter(myMovie);
+
+        Episode myEpisode = new Episode();
+        myEpisode.setSeries(mySeries);
+        myEpisode.setEpisodeNumber(1);
+        myEpisode.setEpisodeName("The Beginning");
+        myEpisode.setTotalVisualizations(300);
+        recommendationFilter.filter(myEpisode);
+
+        var danielsMovie = new Movie();
+        danielsMovie.setTitleName("The Matrix");
+        danielsMovie.setLaunchDate(1999);
+        danielsMovie.setIncludedInPlan(true);
+        danielsMovie.setTitleDurationInMinutes(200);
+        danielsMovie.evaluateTitle(9.5);
+
+
+
+
     }
 }

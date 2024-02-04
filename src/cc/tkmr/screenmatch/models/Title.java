@@ -59,7 +59,7 @@ public class Title {
         System.out.println("Launch Date: " + launchDate);
     }
 
-    public void calculateTitleGrade(double titleGrade) {
+    public void evaluateTitle(double titleGrade) {
         titleGradeSum += titleGrade;
         totalGradeCount++;
     }
