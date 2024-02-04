@@ -4,6 +4,8 @@ import cc.tkmr.screenmatch.models.Episode;
 import cc.tkmr.screenmatch.models.Movie;
 import cc.tkmr.screenmatch.models.Series;
 
+import java.util.ArrayList;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -55,12 +57,21 @@ public class Main {
         myEpisode.setTotalVisualizations(300);
         recommendationFilter.filter(myEpisode);
 
-        var danielsMovie = new Movie();
+        var danielsMovie = new Movie(); // Use var instead of Movie
         danielsMovie.setTitleName("The Matrix");
         danielsMovie.setLaunchDate(1999);
         danielsMovie.setIncludedInPlan(true);
         danielsMovie.setTitleDurationInMinutes(200);
         danielsMovie.evaluateTitle(9.5);
+
+        ArrayList<Movie> movieArrayList = new ArrayList<>(); // or var instead of ArrayList
+        movieArrayList.add(danielsMovie);
+        movieArrayList.add(myMovie);
+        movieArrayList.add(myMovie2);
+        System.out.println("Movie list size: " + movieArrayList.size());
+        System.out.println("Movie list first item: " + movieArrayList.get(0).getTitleName());
+        System.out.println(movieArrayList);
+        System.out.println("Movie list first item: " + movieArrayList.get(0).toString());
 
 
 
