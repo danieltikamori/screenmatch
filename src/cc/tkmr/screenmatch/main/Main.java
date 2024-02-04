@@ -1,3 +1,5 @@
+package cc.tkmr.screenmatch.main;
+
 import cc.tkmr.screenmatch.calculations.DurationCalculator;
 import cc.tkmr.screenmatch.calculations.RecommendationFilter;
 import cc.tkmr.screenmatch.models.Episode;
@@ -32,7 +34,7 @@ public class Main {
         myMovie.evaluateTitle(7.5);
 //        System.out.println(myMovie.movieGradeSum);
 //        System.out.println(myMovie.totalGradeCount);
-        System.out.println(myMovie.calculateAverageTitleGrade());
+        System.out.println(myMovie.calculateAverageTitleRating());
 
         // Testing code on Polymorphism
         DurationCalculator durationCalculator = new DurationCalculator();

@@ -4,10 +4,10 @@ public class Title {
     private String titleName;
     private int launchDate;
     private boolean includedInPlan;
-    private double titleGrade;
-    private double titleGradeSum;
+    private double titleRating;
+    private double titleRatingSum;
     private int totalGradeCount;
-    private double averageTitleGrade;
+    private double averageTitleRating;
     private int totalReviewCount;
     private double averageReview;
     private int titleDurationInMinutes;
@@ -35,8 +35,8 @@ public class Title {
         return titleDurationInMinutes;
     }
 
-    public double getAverageTitleGrade() {
-        return averageTitleGrade;
+    public double takeAverageTitleRating() {
+        return averageTitleRating;
     }
 
     public double getAverageReview() {
@@ -65,13 +65,12 @@ public class Title {
     }
 
     public void evaluateTitle(double titleGrade) {
-        titleGradeSum += titleGrade;
+        titleRatingSum += titleGrade;
         totalGradeCount++;
     }
 
-    public double calculateAverageTitleGrade() {
-        averageTitleGrade = titleGradeSum / totalGradeCount;
-        return averageTitleGrade;
+    public double calculateAverageTitleRating() {
+        return titleRatingSum / totalGradeCount;
     }
 
 }

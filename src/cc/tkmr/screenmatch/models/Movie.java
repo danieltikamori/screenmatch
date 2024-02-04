@@ -11,7 +11,7 @@ public class Movie extends Title implements Classifiable {
 
     @Override
     public int getClassification() {
-        return (int) getAverageTitleGrade() / 2;
+        return (int) takeAverageTitleRating() / 2;
     }
 
     @Override //Overriding the toString method!
