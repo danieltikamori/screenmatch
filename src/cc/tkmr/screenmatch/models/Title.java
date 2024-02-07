@@ -1,7 +1,11 @@
 package cc.tkmr.screenmatch.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Title implements Comparable<Title> {
+    @SerializedName("Title")
     private String titleName;
+    @SerializedName("Year")
     private int launchDate;
     private boolean includedInPlan;
     private double titleRating;
@@ -14,9 +18,10 @@ public class Title implements Comparable<Title> {
     private String titleGenre;
     private String titleDirector;
 
-    public Title(String titleName, int launchDate) {
-        this.titleName = titleName;
-        this.launchDate = launchDate;
+    public Title(TitleOmdb titleName, TitleOmdb launchDate) {
+        this.titleName = titleName.title();
+        this.launchDate = Integer.valueOf(launchDate.year());
+        this.titleDurationInMinutes = Integer.valueOf(titleName.runtime().substring(0, 2));
     }
 
     public String getTitleName() {
@@ -84,5 +89,11 @@ public class Title implements Comparable<Title> {
     @Override
     public int compareTo(Title otherTitle) {
         return this.getTitleName().compareTo(otherTitle.getTitleName());
+    }
+
+    @Override
+    public String toString() {
+        return "titleName='" + titleName + '\'' +
+                ", launchDate=" + launchDate + "," + "duration=" + titleDurationInMinutes + '\'';
     }
 }

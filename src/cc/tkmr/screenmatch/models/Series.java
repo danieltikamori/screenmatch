@@ -7,11 +7,11 @@ public class Series extends Title {
     private boolean isSeriesActive;
     private int minutesPerEpisode;
 
-    public Series(String titleName, int launchDate) {
+    public Series(TitleOmdb titleName, TitleOmdb launchDate) {
         super(titleName, launchDate);
     }
 
-    public Series(String titleName, int launchDate, boolean includedInPlan) {
+    public Series(TitleOmdb titleName, TitleOmdb launchDate, boolean includedInPlan) {
         super(titleName, launchDate);
         setIncludedInPlan(includedInPlan);
     }

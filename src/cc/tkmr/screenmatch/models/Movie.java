@@ -5,7 +5,7 @@ import cc.tkmr.screenmatch.calculations.Classifiable;
 public class Movie extends Title implements Classifiable {
 
     // Constructor - initialize object titleName and launchDate
-    public Movie(String titleName, int launchDate) {
+    public Movie(TitleOmdb titleName, TitleOmdb launchDate) {
         super(titleName, launchDate);
     }
 
