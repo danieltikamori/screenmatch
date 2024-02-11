@@ -98,7 +98,7 @@ public class Title implements Comparable<Title> {
 
     @Override
     public String toString() {
-        return "titleName='" + titleName + '\'' +
-                ", launchDate=" + launchDate + ", duration=" + titleDurationInMinutes + '\'';
+        return "(titleName = " + titleName  +
+                ", launchDate = " + launchDate + ", duration=" + titleDurationInMinutes + ")";
     }
 }
