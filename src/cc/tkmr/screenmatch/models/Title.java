@@ -1,5 +1,6 @@
 package cc.tkmr.screenmatch.models;
 
+import cc.tkmr.screenmatch.exceptions.YearConversionExceptionError;
 import com.google.gson.annotations.SerializedName;
 
 public class Title implements Comparable<Title> {
@@ -20,8 +21,12 @@ public class Title implements Comparable<Title> {
 
     public Title(TitleOmdb titleName, TitleOmdb launchDate) {
         this.titleName = titleName.title();
+
+        if (titleName.year().length() > 4) {
+            throw new YearConversionExceptionError("Couldn't convert year because there's more than 4 characters.");
+        }
         this.launchDate = Integer.valueOf(launchDate.year());
-        this.titleDurationInMinutes = Integer.valueOf(titleName.runtime().substring(0, 2));
+        this.titleDurationInMinutes = Integer.valueOf(titleName.runtime().substring(0, 3));
     }
 
     public String getTitleName() {
@@ -94,6 +99,6 @@ public class Title implements Comparable<Title> {
     @Override
     public String toString() {
         return "titleName='" + titleName + '\'' +
-                ", launchDate=" + launchDate + "," + "duration=" + titleDurationInMinutes + '\'';
+                ", launchDate=" + launchDate + ", duration=" + titleDurationInMinutes + '\'';
     }
 }

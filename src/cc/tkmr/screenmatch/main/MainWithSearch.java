@@ -1,5 +1,6 @@
 package cc.tkmr.screenmatch.main;
 
+import cc.tkmr.screenmatch.exceptions.YearConversionExceptionError;
 import cc.tkmr.screenmatch.models.Title;
 import cc.tkmr.screenmatch.models.TitleOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -33,9 +34,16 @@ public class MainWithSearch {
         Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
         TitleOmdb myTitleOmdb = gson.fromJson(titleNameJson, TitleOmdb.class);
         System.out.println("Title Name: " + myTitleOmdb);
-        Title myTitle = new Title(myTitleOmdb, myTitleOmdb);
-        System.out.println(myTitle);
-        System.out.println();
+        try {
+            Title myTitle = new Title(myTitleOmdb, myTitleOmdb);
+            System.out.println(myTitle);
+            System.out.println();
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        } catch (YearConversionExceptionError e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        System.out.println("Thank you for using ScreenMatch");
     }
 
 
